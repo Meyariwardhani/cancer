@@ -45,13 +45,12 @@ if radius_mean_input.strip() and texture_mean_input.strip() and perimeter_mean_i
     compactness_mean = float(compactness_mean_input)
     concavity_mean = float(concavity_mean_input)
     concave_points_mean = float(concave_points_mean_input)
-    symmetry_mean_mean = float(symmetry_mean_input)
+    symmetry_mean = float(symmetry_mean_input)
 
     # Code untuk prediksi
     # Membuat tombol untuk prediksi
     if st.button('Test Prediksi Diagnosis Kanker Payudara'):
-        input_data = np.array([radius_mean, texture_mean, perimeter_mean, area_mean, smoothness_mean, compactness_mean,
-        concavity_mean, concave_points_mean, symmetry_mean]).reshape(1, -1)
+        input_data = np.array([radius_mean, texture_mean, perimeter_mean, area_mean, smoothness_mean, compactness_mean, concavity_mean, concave_points_mean, symmetry_mean]).reshape(1, -1)
         breastcancer_prediction = breastcancer_model.predict(input_data)
 
         # Menampilkan hasil prediksi
