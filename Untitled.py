@@ -54,9 +54,9 @@ if st.button('Test Prediksi Diagnosis Kanker Payudara'):
     # Mengambil input pengguna dan menyusunnya menjadi array
     input_data = np.array([radius_mean, texture_mean, perimeter_mean, area_mean, smoothness_mean, compactness_mean, concavity_mean, concave_points_mean, symmetry_mean, fractal_dimension_mean]).reshape(1, -1)
     
-    # Lakukan penskalaan terhadap data yang belum di-scaling
-    input_data_scaled = scaler.transform(input_data)
-    
+
+    # Lakukan prediksi menggunakan model yang telah Anda latih sebelumnya
+    breastcancer_prediction = breastcancer_model.predict(input_data)
     
     # Menampilkan hasil prediksi
     if breastcancer_prediction[0] == 1:
