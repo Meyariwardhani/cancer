@@ -1,11 +1,9 @@
 numpy
 pandas 
 scikit-learn
-EarlyStopping
 Sequential
 Dense
 joblib
 matplotlib
 seaborn
-
 pickle
