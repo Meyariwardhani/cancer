@@ -36,7 +36,7 @@ fractal_dimension_mean_input = st.text_input('Input nilai Fractal dimension mean
 
 
 # Validasi input
-if radius_mean_input.strip() and texture_mean_input.strip() and perimeter_mean_input.strip() and area_mean_input.strip() and smoothness_mean.strip() and compactness_mean.strip() and concavity_mean.strip() and concave_points_mean_input.strip() and symmetry_mean_input.strip():
+if radius_mean_input.strip() and texture_mean_input.strip() and perimeter_mean_input.strip() and area_mean_input.strip() and smoothness_mean_input.strip() and compactness_mean_input.strip() and concavity_mean_input.strip() and concave_points_mean_input.strip() and symmetry_mean_input.strip():
     radius_mean = float(radius_mean)
     texture_mean = float(texture_mean_input)
     perimeter_mean = float(perimeter_mean_input)
@@ -50,7 +50,7 @@ if radius_mean_input.strip() and texture_mean_input.strip() and perimeter_mean_i
     # Code untuk prediksi
     # Membuat tombol untuk prediksi
     if st.button('Test Prediksi Diagnosis Kanker Payudara'):
-        input_data = np.array([diagnosis, radius_mean, texture_mean, perimeter_mean, area_mean, smoothness_mean, compactness_mean,
+        input_data = np.array([radius_mean, texture_mean, perimeter_mean, area_mean, smoothness_mean, compactness_mean,
         concavity_mean, concave_points_mean, symmetry_mean]).reshape(1, -1)
         breastcancer_prediction = breastcancer_model.predict(input_data)
 
