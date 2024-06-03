@@ -49,7 +49,7 @@ if radius_mean_input.strip() and texture_mean_input.strip() and perimeter_mean_i
 
     # Code untuk prediksi
     # Membuat tombol untuk prediksi
-   if st.button('Test Prediksi Diagnosis Kanker Payudara'):
+if st.button('Test Prediksi Diagnosis Kanker Payudara'):
     input_data = np.array([radius_mean, texture_mean, perimeter_mean, area_mean, smoothness_mean, compactness_mean, concavity_mean, concave_points_mean, symmetry_mean]).reshape(1, -1)
     breastcancer_prediction = breastcancer_model.predict(input_data)
 
