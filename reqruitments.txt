@@ -1,6 +1,6 @@
 numpy
 pandas 
-sklearn
+scikit-sklearn
 EarlyStopping
 Sequential
 Dense
