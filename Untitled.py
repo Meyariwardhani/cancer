@@ -74,9 +74,9 @@ if diagnosis_input.strip() and radius_mean_input.strip() and texture_mean_input.
 
             breastcancer_severity = clustering_model.predict(clustering_data_pca)
             if breastcancer_severity[0] == 0:
-                severity = 'Rendah'
+                severity = 'Jinak'
             else:
-                severity = 'Tinggi'
+                severity = 'Ganas'
             
             st.write(f'Tingkat keparahan Kanker payudara: {severity}')
 else:
