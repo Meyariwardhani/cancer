@@ -9,4 +9,4 @@ pip == 23.3.1
 matplotlib == 3.8.0
 Seaborn == 0.12.2
 SciPy == 1.10.0
-pickle
+
