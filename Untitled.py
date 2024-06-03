@@ -67,9 +67,6 @@ if st.button('Test Prediksi Diagnosis Kanker Payudara'):
         clustering_data = np.array([radius_mean, texture_mean, perimeter_mean, area_mean, smoothness_mean, compactness_mean, concavity_mean, concave_points_mean, symmetry_mean,  fractal_dimension_mean]).reshape(1, -1)
         clustering_data_scaled = scaler.transform(clustering_data)
 
-        # Terapkan PCA pada data yang di-scaling
-        clustering_data_pca = pca_model.transform(clustering_data_scaled)
-
         breastcancer_severity = clustering_model.predict(clustering_data_pca)
         if breastcancer_severity[0] == 0:
             severity = 'Jinak'
