@@ -49,11 +49,11 @@ if radius_mean_input.strip() and texture_mean_input.strip() and perimeter_mean_i
     fractal_dimension_mean = float(fractal_dimension_mean_input)
 
     # Code untuk prediksi
-    # Membuat tombol untuk prediksi
+  # Membuat tombol untuk prediksi
 if st.button('Test Prediksi Diagnosis Kanker Payudara'):
-    input_data = np.array([radius_mean, texture_mean, perimeter_mean, area_mean, smoothness_mean, compactness_mean, concavity_mean, concave_points_mean, symmetry_mean,  fractal_dimension_mean]).reshape(1, -1)
-    breastcancer_prediction = breastcancer_model.predict(input_data)
-
+    # Mengambil input pengguna dan menyusunnya menjadi array
+    input_data = np.array([radius_mean, texture_mean, perimeter_mean, area_mean, smoothness_mean, compactness_mean, concavity_mean, concave_points_mean, symmetry_mean, fractal_dimension_mean]).reshape(1, -1)
+    
     # Lakukan penskalaan terhadap data yang belum di-scaling
     input_data_scaled = scaler.transform(input_data)
     
@@ -69,6 +69,7 @@ if st.button('Test Prediksi Diagnosis Kanker Payudara'):
         st.error(breastcancer_diagnosis)
 else:
     st.warning('Mohon lengkapi semua kolom input.')
+
 
 
 
