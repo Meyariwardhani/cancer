@@ -49,39 +49,35 @@ if radius_mean_input.strip() and texture_mean_input.strip() and perimeter_mean_i
 
     # Code untuk prediksi
     # Membuat tombol untuk prediksi
-    if st.button('Test Prediksi Diagnosis Kanker Payudara'):
-        input_data = np.array([radius_mean, texture_mean, perimeter_mean, area_mean, smoothness_mean, compactness_mean, concavity_mean, concave_points_mean, symmetry_mean]).reshape(1, -1)
-        breastcancer_prediction = breastcancer_model.predict(input_data)
+   if st.button('Test Prediksi Diagnosis Kanker Payudara'):
+    input_data = np.array([radius_mean, texture_mean, perimeter_mean, area_mean, smoothness_mean, compactness_mean, concavity_mean, concave_points_mean, symmetry_mean]).reshape(1, -1)
+    breastcancer_prediction = breastcancer_model.predict(input_data)
 
-        # Menampilkan hasil prediksi
-        if breastcancer_prediction[0] == 1:
-            breastcancer_diagnosis = 'Pasien terdiagnosis kanker ganas'
-            st.success(breastcancer_diagnosis)
+    # Menampilkan hasil prediksi
+    if breastcancer_prediction[0] == 1:
+        breastcancer_diagnosis = 'Pasien terdiagnosis kanker ganas'
+        st.success(breastcancer_diagnosis)
+    else:
+        breastcancer_diagnosis = 'Pasien terdiagnosis kanker jinak'
+        st.error(breastcancer_diagnosis)
+
+        # Melakukan clustering untuk penderita anemia
+        # Scaling hanya pada variabel yang digunakan untuk pengklasteran
+        clustering_data = np.array([radius_mean, texture_mean, perimeter_mean, area_mean, smoothness_mean, compactness_mean, concavity_mean, concave_points_mean, symmetry_mean]).reshape(1, -1)
+        clustering_data_scaled = scaler.transform(clustering_data)
+
+        # Terapkan PCA pada data yang di-scaling
+        clustering_data_pca = pca_model.transform(clustering_data_scaled)
+
+        breastcancer_severity = clustering_model.predict(clustering_data_pca)
+        if breastcancer_severity[0] == 0:
+            severity = 'Jinak'
         else:
-            breastcancer_diagnosis = 'Pasien terdiagnosis kanker jinak'
-            st.error(breastcancer_diagnosis)
-
-            # Melakukan clustering untuk penderita anemia
-            # Scaling hanya pada variabel yang digunakan untuk pengklasteran
-            clustering_data = np.array([radius_mean, texture_mean, perimeter_mean, area_mean, smoothness_mean, compactness_mean,
-            concavity_mean, concave_points_mean, symmetry_mean]).reshape(1, -1)
-            clustering_data_scaled = scaler.transform(clustering_data)
-
-            # Terapkan PCA pada data yang di-scaling
-            clustering_data_pca = pca_model.transform(clustering_data_scaled)
-
-            breastcancer_severity = clustering_model.predict(clustering_data_pca)
-            if breastcancer_severity[0] == 0:
-                severity = 'Jinak'
-            else:
-                severity = 'Ganas'
-            
-            st.write(f'Tingkat keparahan Kanker payudara: {severity}')
+            severity = 'Ganas'
+        
+        st.write(f'Tingkat keparahan Kanker payudara: {severity}')
 else:
     st.warning('Mohon lengkapi semua kolom input.')
-
-
-# In[ ]:
 
 
 
