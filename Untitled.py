@@ -59,7 +59,7 @@ if st.button('Test Prediksi Diagnosis Kanker Payudara'):
     breastcancer_prediction = breastcancer_model.predict(input_data_scaled)
     
     # Menampilkan hasil prediksi
-    if breastcancer_prediction[1] == 0:
+    if breastcancer_prediction[0] == 0:
         breastcancer_diagnosis = 'Pasien terdiagnosis kanker jinak'
         st.success(breastcancer_diagnosis)
     else:
