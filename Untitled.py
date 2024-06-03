@@ -54,7 +54,7 @@ if diagnosis_input.strip() and radius_mean_input.strip() and texture_mean_input.
     smoothness_mean = float(smoothness_mean_input)
     compactness_mean = float(compactness_mean_input)
     concavity_mean = float(concavity_mean_input)
-    concave_points_mean = float(concave points_mean_input)
+    concave_points_mean = float(concave_points_mean_input)
     symmetry_mean_mean = float(symmetry_mean_input)
 
     # Code untuk prediksi
