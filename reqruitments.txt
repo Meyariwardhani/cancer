@@ -1,0 +1,11 @@
+numpy
+pandas 
+sklearn
+EarlyStopping
+Sequential
+Dense
+joblib
+matplotlib
+seaborn
+
+pickle
