@@ -39,7 +39,7 @@ area_mean_input = st.text_input('Input nilai Area mean')
 smoothness_mean_input = st.text_input('Input nilai Smoothness mean')
 compactness_mean_input = st.text_input('Input nilai Compactness mean')
 concavity_mean_input = st.text_input('Input nilai Concavity mean')
-concave points_mean_input = st.text_input('Input nilai Concave points mean')
+concave_points_mean_input = st.text_input('Input nilai Concave points mean')
 symmetry_mean_input = st.text_input('Input nilai Symmetry mean')
 fractal_dimension_mean_input = st.text_input('Input nilai Fractal dimension mean')
 
