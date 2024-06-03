@@ -12,9 +12,6 @@ from sklearn.preprocessing import MinMaxScaler
 # Membaca model prediksi breastcancer
 breastcancer_model = joblib.load('svm_model.sav')
 
-# Membaca model clustering breastcancer (hasil PCA dengan 1 komponen utama)
-clustering_model = joblib.load('kmeans_model.sav')
-
 # Membaca model scaler
 scaler = joblib.load('scaler_model2.sav')
 
