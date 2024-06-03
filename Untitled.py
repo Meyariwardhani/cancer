@@ -60,10 +60,10 @@ if st.button('Test Prediksi Diagnosis Kanker Payudara'):
     
     # Menampilkan hasil prediksi
     if breastcancer_prediction[0] == 1:
-        breastcancer_diagnosis = 'Pasien terdiagnosis kanker ganas'
+        breastcancer_diagnosis = 'Pasien terdiagnosis kanker jinak'
         st.success(breastcancer_diagnosis)
     else:
-        breastcancer_diagnosis = 'Pasien terdiagnosis kanker jinak'
+        breastcancer_diagnosis = 'Pasien terdiagnosis kanker ganas'
         st.error(breastcancer_diagnosis)
 else:
     st.warning('Mohon lengkapi semua kolom input.')
