@@ -56,24 +56,11 @@ if st.button('Test Prediksi Diagnosis Kanker Payudara'):
 
     # Menampilkan hasil prediksi
     if breastcancer_prediction[0] == 1:
-        breastcancer_diagnosis = 'Pasien terdiagnosis kanker ganas'
+        breastcancer_diagnosis = 'Pasien terdiagnosis kanker jinak'
         st.success(breastcancer_diagnosis)
     else:
-        breastcancer_diagnosis = 'Pasien terdiagnosis kanker jinak'
+        breastcancer_diagnosis = 'Pasien terdiagnosis kanker ganas'
         st.error(breastcancer_diagnosis)
-
-        # Melakukan clustering untuk penderita anemia
-        # Scaling hanya pada variabel yang digunakan untuk pengklasteran
-        clustering_data = np.array([radius_mean, texture_mean, perimeter_mean, area_mean, smoothness_mean, compactness_mean, concavity_mean, concave_points_mean, symmetry_mean,  fractal_dimension_mean]).reshape(1, -1)
-        clustering_data_scaled = scaler.transform(clustering_data)
-
-        breastcancer_severity = clustering_model.predict(clustering_data)
-        if breastcancer_severity[0] == 0:
-            severity = 'Ganas'
-        else:
-            severity = 'Jinak'
-        
-        st.write(f'Tingkat keparahan Kanker payudara: {severity}')
 else:
     st.warning('Mohon lengkapi semua kolom input.')
 
