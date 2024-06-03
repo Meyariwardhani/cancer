@@ -21,15 +21,6 @@ scaler = joblib.load('scaler_model2.sav')
 # Judul web
 st.title('Prediksi Diagnosis Kanker Payudara')
 
-# Input pengguna
-diagnosis_input = st.selectbox(
-    "Pilih diagnosis:",
-    ('Jinak', 'Ganas')
-)
-
-# Mapping diagnosis to 0 and 1
-diagnosis_mapping = {'Jinak': 0, 'Ganas': 1}
-diagnosis_y = diagnosis_mapping[diagnosis_input]
 
 # Menampilkan hasil prediksi
 radius_mean_input = st.text_input('Input nilai Radius mean')
