@@ -36,8 +36,7 @@ fractal_dimension_mean_input = st.text_input('Input nilai Fractal dimension mean
 
 
 # Validasi input
-if diagnosis_input.strip() and radius_mean_input.strip() and texture_mean_input.strip() and perimeter_mean_input.strip() and area_mean_input.strip() and smoothness_mean.strip() and compactness_mean.strip() and concavity_mean.strip() and concave_points_mean_input.strip() and symmetry_mean_input.strip():
-    diagnosis = float(diagnosis)
+if radius_mean_input.strip() and texture_mean_input.strip() and perimeter_mean_input.strip() and area_mean_input.strip() and smoothness_mean.strip() and compactness_mean.strip() and concavity_mean.strip() and concave_points_mean_input.strip() and symmetry_mean_input.strip():
     radius_mean = float(radius_mean)
     texture_mean = float(texture_mean_input)
     perimeter_mean = float(perimeter_mean_input)
